@@ -1,0 +1,508 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #5DADE2; /* Calming Blue */
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header nav {
+    margin-top: 0.5rem;
+}
+
+header nav a, .nav-button {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    background-color: transparent;
+    border: 1px solid #fff; /* For nav-button style */
+    cursor: pointer; /* For nav-button style */
+    font-size: 1rem; /* For nav-button style */
+}
+
+header nav a:hover, .nav-button:hover {
+    background-color: #4A90E2; /* Slightly darker blue */
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #34495E; /* Darker Footer Blue */
+    color: #fff;
+    position: relative; /* Can be fixed if needed, but relative is fine for now */
+    bottom: 0;
+    width: 100%;
+    margin-top: 30px;
+}
+
+/* Home Page Specific */
+#hero {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #A9CCE3; /* Lighter blue for hero */
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+#hero h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: #2C3E50; /* Dark blue text */
+}
+
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #5DADE2;
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #4A90E2;
+}
+
+#features {
+    text-align: center;
+    padding: 20px;
+}
+
+#features ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+#features li {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 200px; /* Fixed width for feature boxes */
+}
+
+/* Auth Forms (Signup/Login Page) */
+.auth-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    margin: 30px auto;
+}
+
+.auth-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.auth-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.auth-container input[type="text"],
+.auth-container input[type="email"],
+.auth-container input[type="password"] {
+    width: calc(100% - 22px); /* Account for padding and border */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.auth-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #5DADE2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.auth-button:hover {
+    background-color: #4A90E2;
+}
+
+.auth-container p {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.auth-container p a {
+    color: #5DADE2;
+    text-decoration: none;
+}
+
+.auth-container p a:hover {
+    text-decoration: underline;
+}
+
+.divider {
+    margin: 30px 0;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+.error-message {
+    color: #D32F2F; /* Red for errors */
+    background-color: #FFCDD2; /* Light red background */
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+
+/* App Dashboard (app.ejs) */
+#welcome {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+#welcome h2 {
+    color: #2C3E50;
+}
+
+.progress-container {
+    margin-top: 10px;
+}
+
+.progress-bar-bg {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    height: 20px;
+    width: 80%;
+    margin: 5px auto 0;
+    overflow: hidden; /* Ensures the fg bar stays within bounds */
+}
+
+.progress-bar-fg {
+    background-color: #76D7C4; /* Teal for progress */
+    height: 100%;
+    border-radius: 5px 0 0 5px; /* Keep left corners rounded */
+    transition: width 0.5s ease-in-out;
+}
+.progress-bar-fg[style*="width: 100%"] {
+    border-radius: 5px; /* Full rounded corners when 100% */
+}
+
+
+#task-manager {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+}
+
+.task-column {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    flex: 1; /* Allows columns to grow */
+    min-width: 300px; /* Minimum width before wrapping */
+    margin-bottom: 20px; /* Space when wrapped */
+}
+
+.task-column h3 {
+    color: #34495E;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.task-add-form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.task-add-form input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    margin-right: -1px; /* Prevents double border with button */
+}
+
+.add-task-btn {
+    padding: 10px 15px;
+    background-color: #5DADE2;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+.add-task-btn:hover {
+    background-color: #4A90E2;
+}
+
+.task-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.task-column li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.task-column li:last-child {
+    border-bottom: none;
+}
+
+.task-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.task-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 5px;
+}
+
+.complete-btn {
+    color: #2ECC71; /* Green */
+}
+.complete-btn:hover {
+    color: #27AE60;
+}
+
+.delete-btn {
+    color: #E74C3C; /* Red */
+}
+.delete-btn:hover {
+    color: #C0392B;
+}
+
+.delete-all-btn {
+    display: block;
+    width: auto;
+    margin: 20px auto 0;
+    padding: 10px 15px;
+    background-color: #E74C3C;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-all-btn:hover {
+    background-color: #C0392B;
+}
+
+/* Streak Page (streak.ejs) */
+#streak-calendar {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.calendar-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.calendar-day {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 10px;
+    width: 120px; /* Adjust as needed */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.calendar-day .date {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.calendar-day .percentage {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.progress-bar-streak-bg {
+    background-color: #e0e0e0;
+    border-radius: 3px;
+    height: 10px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.progress-bar-streak-fg {
+    background-color: #5DADE2; /* Blue for streak progress */
+    height: 100%;
+    border-radius: 3px 0 0 3px;
+}
+.progress-bar-streak-fg[style*="width: 100%"] {
+    border-radius: 3px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header nav a, .nav-button {
+        margin: 0 8px;
+        padding: 0.4rem 0.8rem;
+    }
+
+    #hero h2 {
+        font-size: 1.8rem;
+    }
+
+    #hero p {
+        font-size: 1rem;
+    }
+
+    #features ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #features li {
+        width: 80%; /* Wider for stacked items */
+        margin-bottom: 10px;
+    }
+
+    .auth-container {
+        margin: 20px 15px; /* Add some horizontal margin on mobile */
+        padding: 20px;
+    }
+
+    #task-manager {
+        flex-direction: column; /* Stack columns on smaller screens */
+    }
+
+    .task-column {
+        min-width: unset; /* Allow to shrink fully */
+        width: 100%; /* Take full width when stacked */
+        margin-bottom: 20px;
+    }
+    .task-column:last-child {
+        margin-bottom: 0;
+    }
+
+    .calendar-container {
+        justify-content: space-around; /* Better spacing for fewer items per row */
+    }
+
+    .calendar-day {
+        width: calc(50% - 20px); /* Two items per row, accounting for gap */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 0.8rem 0;
+    }
+    header h1 {
+        font-size: 1.6rem;
+    }
+    header nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    header nav a, .nav-button {
+        margin: 5px 0;
+        width: 70%;
+        text-align: center;
+    }
+
+    .nav-button { /* Ensure form buttons in nav also stack */
+        width: 70%;
+        box-sizing: border-box; /* Include padding in width */
+    }
+    header nav form { /* Make form take width for button */
+        width: 70%;
+        display: flex;
+        justify-content: center;
+    }
+
+
+    main {
+        padding: 10px;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .task-add-form input[type="text"] {
+        font-size: 0.9rem; /* Slightly smaller text in input */
+    }
+    .add-task-btn {
+        font-size: 1rem; /* Adjust button size */
+        padding: 10px 12px;
+    }
+
+    .calendar-day {
+        width: calc(100% - 20px); /* One item per row on very small screens */
+    }
+}

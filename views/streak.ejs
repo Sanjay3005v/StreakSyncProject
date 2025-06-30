@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreakSync - Your Streaks</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Your Streaks</h1>
+        <nav>
+            <a href="/app" class="nav-button">Dashboard</a>
+            <a href="/logout" class="nav-button">Logout</a>
+        </nav>
+    </header>
+    <main>
+        <section id="streak-calendar">
+            <h2>Completion Calendar</h2>
+            <p>Here's a look at your daily task completion percentages.</p>
+            <div class="calendar-container">
+                <% if (streak && streak.length > 0) { %>
+                    <% streak.forEach(function(day) { %>
+                        <div class="calendar-day">
+                            <div class="date"><%= day.date %></div>
+                            <div class="percentage"><%= day.percentage.toFixed(0) %>%</div>
+                            <div class="progress-bar-streak-bg">
+                                <div class="progress-bar-streak-fg" style="width: <%= day.percentage %>%;"></div>
+                            </div>
+                        </div>
+                    <% }); %>
+                <% } else { %>
+                    <p>No streak data yet. Start completing tasks to see your progress!</p>
+                <% } %>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 StreakSync</p>
+    </footer>
+</body>
+</html>

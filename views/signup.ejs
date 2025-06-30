@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreakSync - Sign Up / Login</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>StreakSync</h1>
+    </header>
+    <main>
+        <div class="auth-container">
+            <h2>Register</h2>
+            <form action="/register" method="POST">
+                <% if (error && error.includes("Account already exists")) { %>
+                    <p class="error-message"><%= error %></p>
+                <% } %>
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="mail-register">Email:</label>
+                    <input type="email" id="mail-register" name="mail" required>
+                </div>
+                <div>
+                    <label for="password-register">Password:</label>
+                    <input type="password" id="password-register" name="password" required>
+                </div>
+                <button type="submit" class="auth-button">Register</button>
+            </form>
+            <p>Or <a href="/auth/google">Sign up with Google</a></p>
+
+            <hr class="divider">
+
+            <h2>Login</h2>
+            <form action="/login" method="POST">
+                <% if (error && (error.includes("Invalid credentials") || error.includes("Account does not exist") || error.includes("Kindly login"))) { %>
+                    <p class="error-message"><%= error %></p>
+                <% } %>
+                <div>
+                    <label for="mail-login">Email:</label>
+                    <input type="email" id="mail-login" name="mail" required>
+                </div>
+                <div>
+                    <label for="password-login">Password:</label>
+                    <input type="password" id="password-login" name="password" required>
+                </div>
+                <button type="submit" class="auth-button">Login</button>
+            </form>
+            <p>Or <a href="/auth/google">Login with Google</a></p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 StreakSync</p>
+    </footer>
+</body>
+</html>
