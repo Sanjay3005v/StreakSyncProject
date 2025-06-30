@@ -1,69 +1,63 @@
 :root {
-    /* Base Royal Palette Colors */
-    --color-royal-blue: #4169E1;
-    --color-deep-blue: #003366;
-    --color-gold: #FFD700;
-    --color-pale-gold: #FFFACD;
-    --color-rich-purple: #4B0082;
-    --color-light-purple: #9370DB; /* Lighter purple for dark mode accent if needed */
-    --color-cream: #FFFDD0;
-    --color-dark-charcoal: #1A1A1A;
-    --color-light-grey: #D3D3D3;
-    --color-mid-grey: #808080;
-    --color-white: #FFFFFF;
-    --color-near-black: #222222;
-    --color-error-red-bg-light: #FFCDD2;
-    --color-error-red-text-light: #D32F2F;
-    --color-success-green-bg-light: #C8E6C9;
-    --color-success-green-text-light: #388E3C;
-    --color-error-red-dark: #D32F2F; /* Main error color for dark theme bg */
-    --color-success-green-dark: #388E3C; /* Main success color for dark theme bg */
+    /* Base Cyberpunk Palette Colors */
+    --color-cyber-black: #0D0221;
+    --color-near-black: #101010; /* For text or alternative dark bg */
+    --color-deep-purple: #241B47;
+    --color-neon-blue: #00FFFF; /* Cyan/Aqua */
+    --color-bright-magenta: #FF00FF; /* Fuchsia */
+    --color-toxic-green: #39FF14;
+    --color-cyber-yellow: #FFF000;
+    --color-glitch-white: #F0F0F0;
+    --color-electric-grey: #8A8A8A;
+    --color-interface-blue: #306892;
 
-    /* Light Theme (Default) */
-    --bg-primary: var(--color-cream);
-    --bg-secondary: var(--color-white);
+    /* "Data Stream" Light Theme (Default) */
+    --bg-primary: #E0E5F0; /* Very light, cool grey-blue */
+    --bg-secondary: #F5F7FA; /* Almost white, very clean */
     --text-primary: var(--color-near-black);
-    --text-secondary: var(--color-mid-grey);
-    --text-on-primary-brand: var(--color-white);
-    --text-on-accent-brand: var(--color-near-black); /* Text on Gold for light mode */
-    --border-color: var(--color-light-grey);
-    --brand-primary: var(--color-royal-blue);
-    --brand-primary-hover: var(--color-deep-blue);
-    --brand-accent: var(--color-gold);
-    --brand-accent-hover: #E6C200; /* Darker Gold */
-    --brand-secondary-accent: var(--color-rich-purple);
-    --progress-bar-bg: var(--color-light-grey);
-    --progress-bar-fg: var(--color-royal-blue);
-    --progress-bar-streak-fg: var(--color-gold);
-    --error-bg: var(--color-error-red-bg-light);
-    --error-text: var(--color-error-red-text-light);
-    --success-bg: var(--color-success-green-bg-light);
-    --success-text: var(--color-success-green-text-light);
-    --shadow-color: rgba(0, 0, 0, 0.1);
+    --text-secondary: #506070; /* Cool dark grey */
+    --text-on-primary-brand: var(--color-glitch-white);
+    --text-on-accent-brand: var(--color-glitch-white);
+    --border-color: #B0B8C0; /* Slightly darker cool grey for borders */
+    --brand-primary: var(--color-deep-purple); /* Dark purple as primary in light mode */
+    --brand-primary-hover: var(--color-interface-blue);
+    --brand-accent: var(--color-bright-magenta);
+    --brand-accent-hover: #D900D9; /* Darker Magenta */
+    --brand-secondary-accent: var(--color-neon-blue); /* Neon blue as secondary accent */
+    --progress-bar-bg: #C0C5D0;
+    --progress-bar-fg: var(--color-deep-purple);
+    --progress-bar-streak-fg: var(--color-bright-magenta);
+    --error-bg: var(--color-cyber-yellow);
+    --error-text: var(--color-near-black);
+    --success-bg: var(--color-toxic-green);
+    --success-text: var(--color-near-black);
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Standard subtle shadow for light mode */
+    --placeholder-text: #708090; /* Slate Gray */
 }
 
 body.dark-theme {
-    /* Dark Theme */
-    --bg-primary: var(--color-dark-charcoal);
-    --bg-secondary: var(--color-deep-blue);
-    --text-primary: var(--color-pale-gold);
-    --text-secondary: var(--color-light-grey); /* Was mid-grey, light-grey for better contrast on dark blue */
-    --text-on-primary-brand: var(--color-near-black); /* Text on Gold buttons */
-    --text-on-accent-brand: var(--color-white); /* Text on Royal Blue accent buttons */
-    --border-color: var(--color-mid-grey);
-    --brand-primary: var(--color-gold);
-    --brand-primary-hover: var(--color-pale-gold);
-    --brand-accent: var(--color-royal-blue);
-    --brand-accent-hover: #6495ED; /* CornflowerBlue */
-    --brand-secondary-accent: var(--color-light-purple); /* Using lighter purple for dark mode */
-    --progress-bar-bg: var(--color-mid-grey);
-    --progress-bar-fg: var(--color-gold);
-    --progress-bar-streak-fg: var(--color-royal-blue);
-    --error-bg: var(--color-error-red-dark);
-    --error-text: var(--color-pale-gold);
-    --success-bg: var(--color-success-green-dark);
-    --success-text: var(--color-pale-gold);
-    --shadow-color: rgba(255, 255, 255, 0.1); /* Lighter shadow for dark mode */
+    /* Cyberpunk Dark Theme */
+    --bg-primary: var(--color-cyber-black);
+    --bg-secondary: var(--color-deep-purple);
+    --text-primary: var(--color-glitch-white);
+    --text-secondary: var(--color-electric-grey);
+    --text-on-primary-brand: var(--color-cyber-black); /* Text on Neon Blue buttons */
+    --text-on-accent-brand: var(--color-cyber-black);   /* Text on Magenta buttons */
+    --border-color: var(--color-interface-blue);
+    --brand-primary: var(--color-neon-blue);
+    --brand-primary-hover: var(--color-glitch-white); /* Hover effect could make it white or lighter neon */
+    --brand-accent: var(--color-bright-magenta);
+    --brand-accent-hover: var(--color-glitch-white); /* Hover effect could make it white or lighter neon */
+    --brand-secondary-accent: var(--color-toxic-green);
+    --progress-bar-bg: var(--color-interface-blue);
+    --progress-bar-fg: var(--color-neon-blue);
+    --progress-bar-streak-fg: var(--color-bright-magenta);
+    --error-bg: var(--color-cyber-yellow);
+    --error-text: var(--color-cyber-black);
+    --success-bg: var(--color-toxic-green);
+    --success-text: var(--color-cyber-black);
+    --shadow-color: rgba(0, 255, 255, 0.3); /* Neon blue glow for shadows */
+    --placeholder-text: var(--color-electric-grey);
 }
 
 /* General Body Styles */
@@ -100,12 +94,22 @@ header nav a, .nav-button {
     text-decoration: none;
     margin: 0 15px;
     padding: 0.5rem 1rem;
-    border-radius: 5px;
+    border-radius: 3px; /* Sharper radius */
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
     background-color: transparent;
+    /* For dark theme, nav buttons border will use brand-accent for a neon touch */
     border: 1px solid var(--text-on-primary-brand);
     cursor: pointer;
     font-size: 1rem;
+}
+body.dark-theme header nav a, body.dark-theme .nav-button {
+    border: 1px solid var(--brand-accent); /* Neon border for nav buttons in dark mode */
+    color: var(--brand-accent); /* Neon text for nav buttons in dark mode */
+}
+body.dark-theme header nav a:hover, body.dark-theme .nav-button:hover {
+    background-color: var(--brand-accent);
+    color: var(--text-on-accent-brand); /* Text color on hover */
+    border-color: var(--brand-accent);
 }
 
 /* Style for icon-only buttons, like the theme toggler */
@@ -143,9 +147,9 @@ footer {
     text-align: center;
     padding: 40px 20px;
     background-color: var(--bg-secondary);
-    border-radius: 8px;
+    border-radius: 4px; /* Sharper radius */
     margin-bottom: 30px;
-    box-shadow: 0 2px 5px var(--shadow-color);
+    box-shadow: 0 2px 10px var(--shadow-color); /* Enhanced shadow for cyberpunk */
 }
 
 #hero h2 {
@@ -194,8 +198,8 @@ footer {
 #features li {
     background-color: var(--bg-secondary);
     padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px var(--shadow-color);
+    border-radius: 4px; /* Sharper radius */
+    box-shadow: 0 2px 8px var(--shadow-color); /* Enhanced shadow */
     width: 200px;
 }
 
@@ -203,7 +207,7 @@ footer {
 .auth-container {
     background-color: var(--bg-secondary);
     padding: 30px;
-    border-radius: 8px;
+    border-radius: 4px; /* Sharper radius */
     box-shadow: 0 0 15px var(--shadow-color);
     max-width: 450px;
     margin: 30px auto;
@@ -229,11 +233,18 @@ footer {
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid var(--border-color);
-    border-radius: 4px;
+    border-radius: 2px; /* Sharper inputs */
     box-sizing: border-box;
     background-color: var(--bg-primary);
     color: var(--text-primary);
 }
+.auth-container input[type="text"]::placeholder,
+.auth-container input[type="email"]::placeholder,
+.auth-container input[type="password"]::placeholder {
+    color: var(--placeholder-text);
+    opacity: 0.7;
+}
+
 
 .auth-button {
     width: 100%;
@@ -288,9 +299,9 @@ footer {
     text-align: center;
     padding: 20px;
     background-color: var(--bg-secondary);
-    border-radius: 8px;
+    border-radius: 4px; /* Sharper */
     margin-bottom: 30px;
-    box-shadow: 0 2px 5px var(--shadow-color);
+    box-shadow: 0 2px 8px var(--shadow-color); /* Enhanced shadow */
 }
 
 #welcome h2 {
@@ -331,8 +342,8 @@ footer {
 .task-column {
     background-color: var(--bg-secondary);
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px var(--shadow-color);
+    border-radius: 4px; /* Sharper */
+    box-shadow: 0 2px 12px var(--shadow-color); /* Enhanced shadow */
     flex: 1;
     min-width: 300px;
     margin-bottom: 20px;
@@ -354,7 +365,7 @@ footer {
     flex-grow: 1;
     padding: 10px;
     border: 1px solid var(--border-color);
-    border-radius: 4px 0 0 4px;
+    border-radius: 2px 0 0 2px; /* Sharper */
     margin-right: -1px;
     background-color: var(--bg-primary);
     color: var(--text-primary);
@@ -371,7 +382,7 @@ footer {
     background-color: var(--brand-primary);
     color: var(--text-on-primary-brand);
     border: none;
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 2px 2px 0; /* Sharper */
     cursor: pointer;
     font-size: 1.2rem;
 }
@@ -436,28 +447,26 @@ body.dark-theme .delete-btn {
     width: auto;
     margin: 20px auto 0;
     padding: 10px 15px;
-    background-color: var(--color-error-red-text-light); /* More like a button color */
-    color: var(--color-white);
-    border: none;
-    border-radius: 4px;
+    background-color: var(--error-bg);
+    color: var(--error-text);
+    border: 1px solid var(--error-bg); /* Use error-bg for border as well */
+    border-radius: 2px; /* Sharper */
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
-body.dark-theme .delete-all-btn {
-    background-color: var(--color-error-red-dark);
-    color: var(--color-pale-gold);
-}
+/* No specific dark theme override needed if error-bg and error-text are correctly defined for both themes */
 
 .delete-all-btn:hover {
-    opacity: 0.8;
+    opacity: 0.8; /* Or a more specific hover if desired, e.g., darken background */
+    /* Example: filter: brightness(90%); */
 }
 
 /* Streak Page (streak.ejs) */
 #streak-calendar {
     background-color: var(--bg-secondary);
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px var(--shadow-color);
+    border-radius: 4px; /* Sharper */
+    box-shadow: 0 0 12px var(--shadow-color); /* Enhanced shadow */
     text-align: center;
 }
 
@@ -470,12 +479,12 @@ body.dark-theme .delete-all-btn {
 }
 
 .calendar-day {
-    background-color: var(--bg-primary); /* Changed from f9f9f9 */
+    background-color: var(--bg-primary);
     border: 1px solid var(--border-color);
-    border-radius: 4px;
+    border-radius: 2px; /* Sharper */
     padding: 10px;
     width: 120px;
-    box-shadow: 0 1px 3px var(--shadow-color);
+    box-shadow: 0 1px 5px var(--shadow-color); /* Slightly enhanced shadow */
 }
 
 .calendar-day .date {
