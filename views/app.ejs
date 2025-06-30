@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreakSync - Your Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>StreakSync Dashboard</h1>
+        <nav>
+            <form action="/streak" method="POST" style="display: inline;">
+                 <button type="submit" class="nav-button">View Streaks</button>
+            </form>
+            <a href="/logout" class="nav-button">Logout</a>
+        </nav>
+    </header>
+    <main>
+        <section id="welcome">
+            <h2>Welcome, <%= userName %>!</h2>
+            <p>Today is: <%= date %></p>
+            <div class="progress-container">
+                <p>Today's Completion: <%= percent.toFixed(2) %>%</p>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fg" style="width: <%= percent %>%;"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="task-manager">
+            <div class="task-column" id="pending-tasks">
+                <h3>Today's Tasks</h3>
+                <form action="/task" method="POST" class="task-add-form">
+                    <input type="text" name="t_name" placeholder="Enter new task" required>
+                    <button type="submit" class="add-task-btn">+</button>
+                </form>
+                <ul>
+                    <% task.forEach(function(item) { %>
+                        <li>
+                            <span><%= item.task %></span>
+                            <div class="task-actions">
+                                <form action="/complete-task" method="POST" style="display:inline;">
+                                    <input type="hidden" name="task_id" value="<%= item.task_id %>">
+                                    <input type="hidden" name="task" value="<%= item.task %>">
+                                    <button type="submit" class="complete-btn">✓</button>
+                                </form>
+                                <form action="/delete-task" method="POST" style="display:inline;">
+                                    <input type="hidden" name="task_id" value="<%= item.task_id %>">
+                                    <button type="submit" class="delete-btn">✗</button>
+                                </form>
+                            </div>
+                        </li>
+                    <% }); %>
+                </ul>
+                <% if (task.length > 0) { %>
+                    <form action="/delete-today" method="POST">
+                        <button type="submit" class="delete-all-btn">Delete All Pending</button>
+                    </form>
+                <% } %>
+            </div>
+
+            <div class="task-column" id="completed-tasks">
+                <h3>Completed Today</h3>
+                <ul>
+                    <% complete.forEach(function(item) { %>
+                        <li><%= item.task %></li>
+                    <% }); %>
+                </ul>
+                <% if (complete.length > 0) { %>
+                    <form action="/delete-complete" method="POST">
+                        <button type="submit" class="delete-all-btn">Clear Completed</button>
+                    </form>
+                <% } %>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 StreakSync. Keep the streak alive!</p>
+    </footer>
+</body>
+</html>
