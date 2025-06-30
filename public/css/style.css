@@ -1,63 +1,69 @@
 :root {
-    /* Base Cyberpunk Palette Colors */
-    --color-cyber-black: #0D0221;
-    --color-near-black: #101010; /* For text or alternative dark bg */
-    --color-deep-purple: #241B47;
-    --color-neon-blue: #00FFFF; /* Cyan/Aqua */
-    --color-bright-magenta: #FF00FF; /* Fuchsia */
-    --color-toxic-green: #39FF14;
-    --color-cyber-yellow: #FFF000;
-    --color-glitch-white: #F0F0F0;
-    --color-electric-grey: #8A8A8A;
-    --color-interface-blue: #306892;
+    /* Base Ghix Palette Colors */
+    --color-ghix-deep-charcoal: #0D1117;
+    --color-ghix-medium-dark-grey: #161B22;
+    --color-netflix-red: #E50914;
+    --color-netflix-red-darker: #B20710;
+    --color-github-blue: #58A6FF;
+    --color-github-blue-darker: #2F81F7;
+    --color-github-green: #3FB950;
+    --color-ghix-off-white: #F0F6FC;
+    --color-ghix-pure-white: #FFFFFF;
+    --color-ghix-dark-text: #1F2328;
+    --color-ghix-medium-grey-text: #6E7781;
+    --color-ghix-light-grey-text: #8B949E;
+    --color-ghix-border-dark: #30363D;
+    --color-ghix-border-light: #D0D7DE;
+    --color-warning-yellow: #FDC65F;
 
-    /* "Data Stream" Light Theme (Default) */
-    --bg-primary: #E0E5F0; /* Very light, cool grey-blue */
-    --bg-secondary: #F5F7FA; /* Almost white, very clean */
-    --text-primary: var(--color-near-black);
-    --text-secondary: #506070; /* Cool dark grey */
-    --text-on-primary-brand: var(--color-glitch-white);
-    --text-on-accent-brand: var(--color-glitch-white);
-    --border-color: #B0B8C0; /* Slightly darker cool grey for borders */
-    --brand-primary: var(--color-deep-purple); /* Dark purple as primary in light mode */
-    --brand-primary-hover: var(--color-interface-blue);
-    --brand-accent: var(--color-bright-magenta);
-    --brand-accent-hover: #D900D9; /* Darker Magenta */
-    --brand-secondary-accent: var(--color-neon-blue); /* Neon blue as secondary accent */
-    --progress-bar-bg: #C0C5D0;
-    --progress-bar-fg: var(--color-deep-purple);
-    --progress-bar-streak-fg: var(--color-bright-magenta);
-    --error-bg: var(--color-cyber-yellow);
-    --error-text: var(--color-near-black);
-    --success-bg: var(--color-toxic-green);
-    --success-text: var(--color-near-black);
-    --shadow-color: rgba(0, 0, 0, 0.1); /* Standard subtle shadow for light mode */
-    --placeholder-text: #708090; /* Slate Gray */
+
+    /* Ghix Light Theme (Default) */
+    --bg-primary: var(--color-ghix-off-white);
+    --bg-secondary: var(--color-ghix-pure-white);
+    --text-primary: var(--color-ghix-dark-text);
+    --text-secondary: var(--color-ghix-medium-grey-text);
+    --text-on-primary-brand: var(--color-ghix-pure-white);
+    --text-on-accent-brand: var(--color-ghix-pure-white);
+    --border-color: var(--color-ghix-border-light);
+    --brand-primary: var(--color-netflix-red);
+    --brand-primary-hover: var(--color-netflix-red-darker);
+    --brand-accent: var(--color-github-blue);
+    --brand-accent-hover: var(--color-github-blue-darker);
+    --brand-secondary-accent: var(--color-github-green);
+    --progress-bar-bg: var(--color-ghix-border-light);
+    --progress-bar-fg: var(--color-github-blue);
+    --progress-bar-streak-fg: var(--color-netflix-red);
+    --error-bg: var(--color-warning-yellow);
+    --error-text: var(--color-ghix-dark-text);
+    --success-bg: var(--color-github-green);
+    --success-text: var(--color-ghix-pure-white);
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --placeholder-text: var(--color-ghix-medium-grey-text);
 }
 
 body.dark-theme {
-    /* Cyberpunk Dark Theme */
-    --bg-primary: var(--color-cyber-black);
-    --bg-secondary: var(--color-deep-purple);
-    --text-primary: var(--color-glitch-white);
-    --text-secondary: var(--color-electric-grey);
-    --text-on-primary-brand: var(--color-cyber-black); /* Text on Neon Blue buttons */
-    --text-on-accent-brand: var(--color-cyber-black);   /* Text on Magenta buttons */
-    --border-color: var(--color-interface-blue);
-    --brand-primary: var(--color-neon-blue);
-    --brand-primary-hover: var(--color-glitch-white); /* Hover effect could make it white or lighter neon */
-    --brand-accent: var(--color-bright-magenta);
-    --brand-accent-hover: var(--color-glitch-white); /* Hover effect could make it white or lighter neon */
-    --brand-secondary-accent: var(--color-toxic-green);
-    --progress-bar-bg: var(--color-interface-blue);
-    --progress-bar-fg: var(--color-neon-blue);
-    --progress-bar-streak-fg: var(--color-bright-magenta);
-    --error-bg: var(--color-cyber-yellow);
-    --error-text: var(--color-cyber-black);
-    --success-bg: var(--color-toxic-green);
-    --success-text: var(--color-cyber-black);
-    --shadow-color: rgba(0, 255, 255, 0.3); /* Neon blue glow for shadows */
-    --placeholder-text: var(--color-electric-grey);
+    /* Ghix Dark Theme */
+    --bg-primary: var(--color-ghix-deep-charcoal);
+    --bg-secondary: var(--color-ghix-medium-dark-grey);
+    --text-primary: var(--color-ghix-off-white);
+    --text-secondary: var(--color-ghix-light-grey-text);
+    --text-on-primary-brand: var(--color-ghix-pure-white);
+    --text-on-accent-brand: var(--color-ghix-pure-white);
+    --border-color: var(--color-ghix-border-dark);
+    --brand-primary: var(--color-netflix-red);
+    --brand-primary-hover: var(--color-netflix-red-darker);
+    --brand-accent: var(--color-github-blue);
+    --brand-accent-hover: var(--color-github-blue-darker);
+    --brand-secondary-accent: var(--color-github-green);
+    --progress-bar-bg: var(--color-ghix-border-dark);
+    --progress-bar-fg: var(--color-github-blue);
+    --progress-bar-streak-fg: var(--color-netflix-red);
+    --error-bg: var(--color-netflix-red-darker);
+    --error-text: var(--color-ghix-off-white);
+    --success-bg: var(--color-github-green);
+    --success-text: var(--color-ghix-pure-white);
+    --shadow-color: rgba(0, 0, 0, 0.3); /* Darker, more subtle shadow for dark mode */
+    --placeholder-text: var(--color-ghix-light-grey-text);
 }
 
 /* General Body Styles */
@@ -133,8 +139,8 @@ main {
 footer {
     text-align: center;
     padding: 1rem 0;
-    background-color: var(--color-deep-blue); /* Kept a specific dark blue for footer consistency */
-    color: var(--color-white); /* Ensuring text is white on this specific footer bg */
+    background-color: var(--color-ghix-medium-dark-grey); /* Consistent dark footer using Ghix variable */
+    color: var(--color-ghix-light-grey-text); /* Appropriate text color for this dark bg */
     position: relative;
     bottom: 0;
     width: 100%;
